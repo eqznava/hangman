@@ -3,12 +3,12 @@ import random
 def read():
     words = []
     with open('./archivos/data.txt', 'r', encoding = 'utf-8' ) as file:
+        #Try to convert to list comprehension
         for line in file:
             words.append(line)
         random_word = random.choice(words)
         return random_word
 
-#Convert to comprehension function
 def random_words_to_list(random_word):
     word_to_list = list(random_word)
     word_to_list.pop()
