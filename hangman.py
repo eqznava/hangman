@@ -55,7 +55,7 @@ def com_lett(my_letter):
             for valueW in indices:
                 if indexWTL == valueW:
                     w[valueW] = found_letters[0]
-    return w
+    update(w)
 
 
 def update(w):
@@ -68,19 +68,21 @@ def show_update():
     update_guess = []
     with open('C:/Users/natif/Escritorio/papa/Python/python_intermedio/proyecto_final/archivos/rw_transform.txt', 'r', encoding='utf-8') as file:
         for line in file:
-            update_guess = line
-        for lett in update_guess:
-            print(lett, end=' ')
-
+           update_guess = line
+           sUl = list(update_guess)
+        for lett in sUl:
+            return str(lett) 
     
 def main():    
     print(read())
     print('\n')
-    transform_characters(show_update())
+    transform_characters(transform_to_list())
     print('\n')
     my_letter = input('Try to guess the letter i\'m thinking of: \n')
-    update(com_lett(my_letter)
+    com_lett(my_letter)
+    print(show_update())
 
-
-if __name__ == '__main__':
+if __name__ == "__main__": 
     main()
+    # Falta hacer que el cambio lo haga sobre las lineas de arriba y despues meter todo en un while loop y
+    # hacer que no muestre el la palabra none. 
